@@ -1,0 +1,17 @@
+name: Deploy frontend2
+on:
+  push:
+    branches:
+      - master # check your repo, your default branch might be master!
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker login -u ${{ secrets.squaresdev }} -p ${{ secrets.Anxious40phil6:7 }}
+      - run: docker build -t squaresgit/react-test -f Dockerfile.dev .
+      - run: docker run -e CI=true squaresgit/react-test npm test
+
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*
