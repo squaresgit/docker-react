@@ -1,0 +1,25 @@
+version: '3'
+services: 
+  web:
+    build: 
+      # tell the system which file to use
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # create a placeholder for the node_modules folder
+      - /home/node/app/node_modules
+      # now map everything knowing the node_modules folder does not exist
+      - .:/home/node/app
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      # create a placeholder for the node_modules folder
+      - /home/node/app/node_modules
+      # now map everything knowing the node_modules folder does not exist
+      - .:/home/node/app
+    command: ["npm", "run", "test"]
+
