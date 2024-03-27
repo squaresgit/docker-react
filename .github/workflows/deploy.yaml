@@ -1,4 +1,4 @@
-name: Deploy frontend2
+name: Deploy frontend3
 on:
   push:
     branches:
@@ -20,10 +20,10 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: Frontend2
-          environment_name: Frontend2-env
-          existing_bucket_name: elasticbeanstalk-us-east-2-058264436538
-          region: us-east-2
+          application_name: frontend3
+          environment_name: frontend3-env
+          existing_bucket_name: elasticbeanstalk-us-east-1-058264436538
+          region: us-east-1
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
 
