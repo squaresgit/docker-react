@@ -1,0 +1,2 @@
+# ignore the nodes_module folder. it contains dependencies we done need to copy
+node_modules
