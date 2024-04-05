@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> Whole new AWS ENV usr and S3
+          Edit <code>src/App.js</code> Whole new AWS ENV usr, SE and new cred key value
         </p>
         <a
           className="App-link"
